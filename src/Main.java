@@ -67,6 +67,7 @@ public class Main {
                                     if (teacher.getId() == choice6) {
                                         //teachers.remove(teacher);
                                         index = teachers.indexOf(teacher);
+                                        break;
                                     }
                                 }
                                 teachers.remove(index);
@@ -126,6 +127,7 @@ public class Main {
                                 for (Student student : students) {
                                     if (student.getId() == choice5) {
                                         index = students.indexOf(student);
+                                        break;
                                     }
                                 }
                                 students.remove(index);
