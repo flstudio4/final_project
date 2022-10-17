@@ -35,6 +35,7 @@ public class Main {
         int choice5;    // Student delete control var
         int choice6;    // Teacher delete control var
         int total = 0;  // Total classes count control var
+
         printGreeting();
 
         do {
