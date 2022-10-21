@@ -39,6 +39,7 @@ public class Main {
         printGreeting();
 
         do {
+
             printMainMenu();
             choice = input.nextInt();
             input.nextLine();
@@ -171,11 +172,13 @@ public class Main {
         do {
             System.out.print("Enter First Name: ");
             name = input.nextLine();
+
         } while (name.equals(""));
 
         do {
             System.out.print("Enter Last Name: ");
             lastName = input.nextLine();
+
         } while (lastName.equals(""));
         return new Student(globalId, name, lastName, createClasses());
     }
@@ -193,23 +196,27 @@ public class Main {
         do {
             System.out.println("Enter First Name: ");
             first = input.nextLine();
+
         } while (first.equals(""));
 
         do {
             System.out.println("Enter Last Name: ");
             last = input.nextLine();
+
         } while (last.equals(""));
 
         do {
             System.out.println("Enter Department: (0-CIS, 1-HIS, 2-MAT, 3-LIT, 4-PHY, 5-ART, 6-BIO, 7-ENG)");
             dept = input.nextInt();
             input.nextLine();
+
         } while (dept < 0 || dept > 7);
 
         do {
             System.out.println("Enter Years of Experience: 0 - 50: ");
             exp = input.nextInt();
             input.nextLine();
+
         } while (exp < 0);
 
         return new Teacher(globalId, first, last, departments[dept], exp);
@@ -221,6 +228,7 @@ public class Main {
         int credit;
 
         do {
+
             System.out.print("Enter number for course(0-CIS, 1-HIS, 2-MAT, 3-LIT, 4-PHY, 5-ART, 6-BIO, 7-ENG): ");
             dept = input.nextInt();
             input.nextLine();
@@ -273,6 +281,7 @@ public class Main {
         System.out.println(version);
         System.out.println(stars);
         System.out.println();
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException exc) {
