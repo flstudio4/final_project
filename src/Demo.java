@@ -67,5 +67,4 @@ public final class Demo {
         student2.calculateDue(student2);
         student3.calculateDue(student3);
     }
-
 }
