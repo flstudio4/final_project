@@ -5,7 +5,7 @@
  * Demo purposes, so in the main() method for creating users manually I used different lists to not mess up main system
  * by fake users. f you want to test my application you can manually add anything, it's working.
  * <p>
- * Author Dmitrii Sumenko
+ * @author Dmitrii Sumenko
  * Date: 10/12/2022
  */
 

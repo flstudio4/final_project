@@ -6,7 +6,7 @@
  * <p>
  * This class contains main logic
  * <p>
- * @Author Dmitrii Sumenko
+ * @author Dmitrii Sumenko
  * Date: 10/12/2022
  */
 

@@ -1,7 +1,7 @@
 /**
  * This class is a parent class for Teacher and Student classes. It contains common logic and base constructor.
  * <p>
- * Author Dmitrii Sumenko
+ * @author Dmitrii Sumenko
  * Date: 10/12/2022
  */
 
