@@ -12,6 +12,7 @@
 
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -28,12 +29,12 @@ public class Main {
     public static void main(String[] args) {
         input = new Scanner(System.in);
 
-        int choice;     // Main switch control var
-        int choice2;    // Teachers' menu control var
-        int choice3;    // Students' menu control var
-        int choice4;    // Add more classes or not var
-        int choice5;    // Student delete control var
-        int choice6;    // Teacher delete control var
+        int choice = 0;     // Main switch control var
+        int choice2 = 0;    // Teachers' menu control var
+        int choice3 = 0;    // Students' menu control var
+        int choice4 = 0;    // Add more classes or not var
+        int choice5 = 0;    // Student delete control var
+        int choice6 = 0;    // Teacher delete control var
         int total = 0;  // Total classes count control var
 
         printGreeting();
@@ -41,7 +42,11 @@ public class Main {
         do {
 
             printMainMenu();
-            choice = input.nextInt();
+            try {
+                choice = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Enter numeric value");
+            }
             input.nextLine();
 
             switch (choice) {
@@ -49,7 +54,11 @@ public class Main {
                 case 1 -> {
                     do {
                         printTeacherMenu();
-                        choice2 = input.nextInt();
+                        try {
+                            choice2 = input.nextInt();
+                        } catch (InputMismatchException e) {
+                            System.out.println("Enter numeric value");
+                        }
                         input.nextLine();
 
                         if (choice2 == 0) {
@@ -60,7 +69,11 @@ public class Main {
                         } else if (choice2 == 1) {
                             // Deleting a Teacher
                             System.out.print("Enter Teacher ID to delete: ");
-                            choice6 = input.nextInt();
+                            try {
+                                choice6 = input.nextInt();
+                            } catch (InputMismatchException e) {
+                                System.out.println("Input numeric value");
+                            }
                             input.nextLine();
 
                             if (!teachers.isEmpty()) {
@@ -90,7 +103,11 @@ public class Main {
                 case 2 -> {
                     do {
                         printStudentMenu();
-                        choice3 = input.nextInt();
+                        try {
+                            choice3 = input.nextInt();
+                        } catch (InputMismatchException e) {
+                            System.out.println("Enter numeric value");
+                        }
                         input.nextLine();
 
                         if (choice3 == 0) {
@@ -102,7 +119,11 @@ public class Main {
 
                             do {
                                 System.out.println("Want to add more classes? (1 - yes, 2 - no)");
-                                choice4 = input.nextInt();
+                                try {
+                                    choice4 = input.nextInt();
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Enter numeric value");
+                                }
                                 input.nextLine();
 
                                 if (choice4 == 1) {
@@ -120,7 +141,11 @@ public class Main {
                             System.out.println("Student successfully added.\n");
                         } else if (choice3 == 1) {
                             System.out.print("Enter Student ID to delete: ");
-                            choice5 = input.nextInt();
+                            try {
+                                choice5 = input.nextInt();
+                            } catch (InputMismatchException e) {
+                                System.out.println("Enter numeric value");
+                            }
                             input.nextLine();
 
                             // Deleting a Student
@@ -190,8 +215,8 @@ public class Main {
     public static Teacher createTeacher() {
         String first;
         String last;
-        int dept;
-        int exp;
+        int dept = 0;
+        int exp = 0;
 
         do {
             System.out.println("Enter First Name: ");
@@ -207,14 +232,22 @@ public class Main {
 
         do {
             System.out.println("Enter Department: (0-CIS, 1-HIS, 2-MAT, 3-LIT, 4-PHY, 5-ART, 6-BIO, 7-ENG)");
-            dept = input.nextInt();
+            try {
+                dept = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Enter numeric value");
+            }
             input.nextLine();
 
         } while (dept < 0 || dept > 7);
 
         do {
             System.out.println("Enter Years of Experience: 0 - 50: ");
-            exp = input.nextInt();
+            try {
+                exp = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Input numeric value");
+            }
             input.nextLine();
 
         } while (exp < 0);
@@ -223,21 +256,29 @@ public class Main {
     }
 
     public static Course createCourse() {
-        int dept;
-        int number;
+        int dept = 0;
+        int number = 0;
         int credit;
 
         do {
 
             System.out.print("Enter number for course(0-CIS, 1-HIS, 2-MAT, 3-LIT, 4-PHY, 5-ART, 6-BIO, 7-ENG): ");
-            dept = input.nextInt();
+            try {
+                dept = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Input numeric value");
+            }
             input.nextLine();
 
         } while (dept < 0 || dept > 7);
 
         do {
             System.out.print("Enter number for class(0-101, 1-121, 2-140, 3-144, 4-181, 5-244, 6-281, 7-302): ");
-            number = input.nextInt();
+            try {
+                number = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Input numeric value");
+            }
             input.nextLine();
 
         } while (number < 0 || number > 7);

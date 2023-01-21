@@ -19,11 +19,11 @@ public class Teacher extends Employee {
         super(id, firstName, lastName);
         this.department = department;
         if (yearsOfExperience == 0) {
-            this.salary = BASE_SALARY;
+            salary = BASE_SALARY;
         } else if (yearsOfExperience > 15) {
-            this.salary = MAX_SALARY;
+            salary = MAX_SALARY;
         } else {
-            this.salary = BASE_SALARY + BRACKET * yearsOfExperience;
+            salary = BASE_SALARY + BRACKET * yearsOfExperience;
         }
         this.yearsOfExperience = yearsOfExperience;
     }
